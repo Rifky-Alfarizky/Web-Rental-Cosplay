@@ -1,0 +1,138 @@
+/* ============================================================
+   STYLE.CSS - tampilan seluruh website
+   Warna utama bisa diganti di bagian :root di bawah ini
+   ============================================================ */
+:root {
+    --warna-utama: #7c3aed;     /* ungu */
+    --warna-gelap: #5b21b6;
+    --warna-aksen: #ec4899;     /* pink */
+    --latar: #f5f3ff;
+    --teks: #1f2937;
+    --abu: #6b7280;
+}
+
+* { box-sizing: border-box; margin: 0; padding: 0; }
+
+body {
+    font-family: 'Segoe UI', Arial, sans-serif;
+    background: var(--latar);
+    color: var(--teks);
+    line-height: 1.5;
+}
+
+a { color: var(--warna-utama); text-decoration: none; }
+img { max-width: 100%; display: block; }
+
+.container { width: 92%; max-width: 1100px; margin: 0 auto; }
+
+/* ---------- Tombol ---------- */
+.btn {
+    display: inline-block;
+    background: var(--warna-utama);
+    color: #fff;
+    border: 2px solid var(--warna-utama);
+    padding: 8px 18px;
+    border-radius: 8px;
+    font-size: 1rem;
+    cursor: pointer;
+    text-align: center;
+    transition: 0.2s;
+}
+.btn:hover { background: var(--warna-gelap); border-color: var(--warna-gelap); color: #fff; }
+.btn-garis { background: transparent; color: var(--warna-utama); }
+.btn-besar { padding: 12px 28px; font-size: 1.1rem; background: var(--warna-aksen); border-color: var(--warna-aksen); }
+.btn-besar:hover { background: #be185d; border-color: #be185d; }
+.btn-penuh { width: 100%; margin-top: 10px; }
+.btn-mati { background: #d1d5db; border-color: #d1d5db; color: #6b7280; cursor: not-allowed; }
+.btn-mati:hover { background: #d1d5db; border-color: #d1d5db; color: #6b7280; }
+
+/* ---------- Navbar ---------- */
+.navbar { background: #fff; box-shadow: 0 2px 8px rgba(0,0,0,0.08); position: sticky; top: 0; z-index: 10; }
+.nav-isi { display: flex; justify-content: space-between; align-items: center; padding: 12px 0; }
+.logo { font-size: 1.4rem; font-weight: bold; color: var(--warna-utama); }
+.menu { display: flex; align-items: center; gap: 18px; }
+.menu a:not(.btn) { color: var(--teks); }
+.menu a:not(.btn):hover { color: var(--warna-utama); }
+.sapaan { color: var(--abu); }
+.tombol-menu { display: none; background: none; border: none; font-size: 1.8rem; cursor: pointer; color: var(--warna-utama); }
+
+/* ---------- Banner ---------- */
+.hero {
+    background: linear-gradient(135deg, var(--warna-utama), var(--warna-aksen));
+    color: #fff;
+    text-align: center;
+    padding: 70px 0;
+}
+.hero h1 { font-size: 2.2rem; margin-bottom: 10px; }
+.hero p { margin-bottom: 24px; opacity: 0.95; }
+
+/* ---------- Katalog ---------- */
+.katalog { padding: 40px 0; }
+.katalog h2 { margin-bottom: 16px; }
+
+.filter { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 24px; }
+.filter-btn {
+    background: #fff; border: 2px solid var(--warna-utama); color: var(--warna-utama);
+    padding: 6px 16px; border-radius: 20px; cursor: pointer; font-size: 0.95rem;
+}
+.filter-btn.aktif, .filter-btn:hover { background: var(--warna-utama); color: #fff; }
+
+/* Grid otomatis: jumlah kolom menyesuaikan lebar layar */
+.grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(230px, 1fr)); gap: 20px; }
+
+.kartu { background: #fff; border-radius: 14px; overflow: hidden; box-shadow: 0 3px 10px rgba(0,0,0,0.08); transition: 0.2s; }
+.kartu:hover { transform: translateY(-4px); box-shadow: 0 8px 18px rgba(0,0,0,0.12); }
+.kartu img { width: 100%; height: 220px; object-fit: cover; background: #e5e7eb; }
+.kartu-isi { padding: 14px; }
+.kartu-isi h3 { margin: 6px 0 4px; font-size: 1.1rem; }
+.label { background: #ede9fe; color: var(--warna-gelap); font-size: 0.75rem; padding: 2px 10px; border-radius: 10px; }
+.info { color: var(--abu); font-size: 0.9rem; }
+.harga { font-weight: bold; color: var(--warna-utama); margin: 6px 0; }
+.harga small { color: var(--abu); font-weight: normal; }
+.status { display: inline-block; font-size: 0.8rem; padding: 2px 10px; border-radius: 10px; }
+.status.ada { background: #dcfce7; color: #166534; }
+.status.habis { background: #fee2e2; color: #991b1b; }
+
+/* ---------- Form login & daftar ---------- */
+.halaman-form { min-height: calc(100vh - 130px); display: flex; align-items: center; justify-content: center; padding: 30px 15px; }
+.kartu-form { background: #fff; width: 100%; max-width: 420px; padding: 30px; border-radius: 16px; box-shadow: 0 6px 20px rgba(0,0,0,0.1); }
+.kartu-form h1 { font-size: 1.6rem; margin-bottom: 4px; }
+.sub { color: var(--abu); margin-bottom: 18px; }
+.kartu-form label { display: block; margin: 12px 0 4px; font-weight: 600; font-size: 0.95rem; }
+.kartu-form input[type="text"], .kartu-form input[type="email"], .kartu-form input[type="password"] {
+    width: 100%; padding: 10px 12px; border: 1.5px solid #d1d5db; border-radius: 8px; font-size: 1rem;
+}
+.kartu-form input:focus { outline: none; border-color: var(--warna-utama); }
+.kolom-password { display: flex; gap: 6px; }
+.lihat-password { background: #ede9fe; border: none; color: var(--warna-gelap); padding: 0 12px; border-radius: 8px; cursor: pointer; }
+.kartu-form .centang { display: flex; align-items: center; gap: 8px; font-weight: normal; }
+.link-bawah { text-align: center; margin-top: 16px; color: var(--abu); }
+
+.alert { padding: 10px 14px; border-radius: 8px; margin-bottom: 10px; font-size: 0.92rem; }
+.alert-error { background: #fee2e2; color: #991b1b; }
+.alert-sukses { background: #dcfce7; color: #166534; }
+
+/* ---------- Footer ---------- */
+.footer { background: #1f2937; color: #d1d5db; text-align: center; padding: 18px 0; font-size: 0.9rem; }
+
+/* ============================================================
+   RESPONSIF: aturan khusus layar kecil (HP & tablet)
+   ============================================================ */
+@media (max-width: 768px) {
+    .tombol-menu { display: block; }
+    .menu {
+        display: none;               /* disembunyikan dulu di HP */
+        position: absolute; top: 100%; left: 0; right: 0;
+        background: #fff; flex-direction: column; align-items: stretch;
+        padding: 16px; gap: 12px; box-shadow: 0 6px 10px rgba(0,0,0,0.1);
+    }
+    .menu.buka { display: flex; }    /* muncul saat tombol ☰ ditekan */
+    .hero { padding: 45px 0; }
+    .hero h1 { font-size: 1.6rem; }
+}
+@media (max-width: 480px) {
+    .grid { grid-template-columns: repeat(2, 1fr); gap: 12px; }
+    .kartu img { height: 150px; }
+    .kartu-isi { padding: 10px; }
+    .kartu-form { padding: 22px; }
+}

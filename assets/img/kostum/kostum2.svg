@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="400" height="500" viewBox="0 0 400 500">
+  <rect width="400" height="500" fill="#ec4899"/>
+  <circle cx="200" cy="170" r="55" fill="#fff" opacity="0.85"/>
+  <path d="M110 400 Q200 230 290 400 Z" fill="#fff" opacity="0.85"/>
+  <text x="200" y="460" font-family="Arial" font-size="26" fill="#fff" text-anchor="middle">Maid Cafe</text>
+</svg>
